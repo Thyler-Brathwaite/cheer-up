@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap");
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background-color: pink;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  box-shadow: -10px 10px 150px red;
+}
+
+@media (max-width: 600px) {
+  .container{
+    width: 80%;
+  }
+}
+
+.slider {
+  display: flex;
+  transition: transform 1 ease-in-out;
+  width: 400%; /* 4 slides */
+  
+}
+
+.intro img{
+    border-radius: 15px;
+    box-shadow: -10px 10px 150px #FFC0CB;
+}
+.scientific-facts img{
+    width: 10%;
+    border-radius: 15px;
+    box-shadow: -10px 10px 150px #A2D2FF;
+}
+.poem img{
+    width: 10%;
+    border-radius: 10px;
+    box-shadow: -10px 10px 150px #D9F99D;
+}
+
+.patch-notes img{
+    width: 10%;
+    background-color: #FDE68A;
+    border-radius: 10px;
+    box-shadow: -10px 10px 150px #FDE68A;
+}
+.slide {
+  flex: 0 0 100%;
+  
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+  .slide {
+    padding: 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
+}
+@keyframes info-up {
+  from {
+    opacity: 0.2;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

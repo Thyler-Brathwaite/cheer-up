@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+ <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+   <button class="nav-button" id="prev">← Prev</button>
+  <div class="container">
+      <div class="slider">
+      <div class="slide intro">
+        <h1>Project: make Julia <br>
+          feel a bit better</h1>
+        <p>Since your feeling down <br> I decided to make something <br> to cheer you up <br> hope it helps </p>
+        <img src="images/for j.png" alt="">
+      </div>
+
+      <div class="slide scientific-facts">
+        <h1>Totally Real <br>
+          and "Scientific” Facts <br>About Her</h1>
+        <ul>
+          <li>
+            <p>Studies show 97.4% of bad days <br> retreat at the sight of your smile.</p>
+          </li>
+          <li>
+            <p>Her smile has a stronger <br>pull than any hydrogen bond.</p>
+          </li>
+          <li>
+            <p>The UN confirmed your laugh <br> is a renewable energy source.</p>
+          </li>
+          <li>She’s not on the Periodic Table <br> because perfection is too rare to classify.</li>
+          <li>
+            <p>One look from her and electrons <br> literally jump to a higher energy level.</p>
+          </li>
+        </ul>
+        <img src="images/sciencefacts.jpg" alt="">
+      </div>
+
+      <div class="slide poem">
+        <h1>A Poem ??</h1>
+        <p>Roses are red
+          <br> Cinderella's dress is blue (I think)
+          <br> Julia is forever amazing 
+          <br> and soon she'll realize it too 
+          <br> Beauty that has everyone gazing 
+          <br> Smile as infectious as the flu
+          <br> She overcomes everything she’s facing
+          <br> So time will pass and she'll feel brand new
+          <br>
+        </p>
+        <p>
+          With all the qualities of a disney princess at heart
+          <br> her ambition knows no limit
+          <br> face is a work of art
+          <br> and as fierce as mulan, no one can break her spirit
+          <br> I hope this made your day better
+          <br> and add some joy in it.
+        </p>
+        <img src="images/rose.webp" alt="">
+      </div>
+
+      <div class="slide patch-notes">
+        <h1>A “Mood Upgrade” <br> Software Patch Note</h1>
+        <h2>Patch 1.2.3</h2>
+        <p>✅ Fixed glitch causing random sadness</p>
+        <p>✅ Boosted serotonin graphics</p>
+        <p>✅ Added cuddle plugin</p>
+        <p>✅ Reduced overthinking lag by 70%</p>
+        <img src="images/eva.webp" alt="">
+      </div>
+    </div>
+
+   
+
+    
+      </div>
+    <button class="nav-button" id="next">Next →</button>
+
+    <audio id="my-audio" src="images/d4vd - Backstreet Girl [Official Lyric Video].mp3" autoplay loop></audio>
+
+  
+    
+
+
+    
+     <script>
+     document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("my-audio");
+      audio.volume = 0.1;
+    });
+  </script>
+
+  
+
+<script>
+  let currentIndex = 0;
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const backgroundColors = ["#FFC0CB", "#A2D2FF", "#D9F99D", "#FDE68A"];
+const slideStyles = [
+  { bg: "#FFC0CB", text: "#ce0f2e", shadow: "-10px 10px 150px #FF69B4" }, // pink
+  { bg: "#A2D2FF", text: "#1E3A8A", shadow: "-10px 10px 150px #3B82F6" }, // blue
+  { bg: "#D9F99D", text: "#065F46", shadow: "-10px 10px 150px #4ADE80" }, // green
+  { bg: "#FDE68A", text: "#92400E", shadow: "-10px 10px 150px #FBBF24" }  // yellow
+];
+
+function showSlide(index) {
+  const total = slides.length;
+  if (index < 0) index = total - 1;
+  if (index >= total) index = 0;
+  currentIndex = index;
+
+  // Move the slide
+  slider.style.transform = `translateX(-${index * 100}%)`;
+
+  // Update background
+  document.body.style.backgroundColor = slideStyles[index].bg;
+
+  // Update text colors
+  const activeSlide = slides[index];
+  const headings = activeSlide.querySelectorAll("h1, h2");
+  const paragraphs = activeSlide.querySelectorAll("p, li");
+
+  headings.forEach(el => el.style.color = slideStyles[index].text);
+  paragraphs.forEach(el => el.style.color = slideStyles[index].text);
+
+  // ✅ Update box shadow
+  document.querySelector('.container').style.boxShadow = slideStyles[index].shadow;
+}
+
+document.getElementById('next').addEventListener('click', () => {
+  showSlide(currentIndex + 1);
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+  showSlide(currentIndex - 1);
+});
+</script>
+  
+</body>
+
+
+
+
